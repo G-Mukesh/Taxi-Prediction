@@ -5,7 +5,10 @@ import pickle
 
 app = Flask(__name__)
 
-model2 = pickle.load(open(r'D:\Mukesh\uber-prediction\venv\model.pkl','rb'))
+#model2 = pickle.load(open(r'D:\Mukesh\uber-prediction\venv\model.pkl','rb'))
+import os
+model_path = os.path.join(os.path.dirname(__file__), 'model.pkl')
+model2 = pickle.load(open(model_path, 'rb'))
 
 @app.route('/')
 def home():
